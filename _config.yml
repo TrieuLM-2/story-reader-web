@@ -23,6 +23,9 @@ exclude:
   - vendor/ruby/
   - README.md
   - "*.html"
+  - the-wolf-at-the-door.html
+  - book-detail.html
+  - index.html
 
 # Collections
 collections:
