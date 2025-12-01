@@ -384,6 +384,67 @@ body {
     color: #2c3e50;
 }
 
+.book-description blockquote {
+    border-left: 4px solid #16a085;
+    padding-left: 15px;
+    color: #555;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+.book-description h2,
+.book-description h3 {
+    margin-top: 30px;
+    color: #2c3e50;
+}
+
+.book-description ul {
+    line-height: 2;
+}
+
+/* Epub Layout (Alternative for story pages) */
+.epub-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.epub-cover img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.epub-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.epub-meta {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.epub-rating {
+    color: #f39c12;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.epub-desc {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.epub-desc strong {
+    color: #2c3e50;
+}
+
 /* Tabs */
 .book-details-tabs {
     margin-bottom: 30px;
@@ -394,6 +455,13 @@ body {
     gap: 10px;
     border-bottom: 2px solid #e0e0e0;
     margin-bottom: 20px;
+}
+
+.tab-container {
+    display: flex;
+    gap: 10px;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 30px;
 }
 
 .tab-btn {
@@ -464,6 +532,48 @@ body {
 .chapter-item:hover {
     background: #16a085;
     color: white;
+}
+
+/* Chapter List Custom */
+.chapter-list-custom {
+    list-style: none;
+    padding: 0;
+}
+
+.chapter-list-custom li {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.chapter-list-custom li:hover {
+    background: #f9f9f9;
+}
+
+.chapter-list-custom a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chapter-list-custom a:hover {
+    color: #16a085;
+}
+
+.new-badge {
+    color: #16a085;
+    font-size: 0.8rem;
+    border: 1px solid #16a085;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: normal;
+}
+
+.locked-chapter {
+    color: #aaa;
 }
 
 /* Book Actions */
@@ -568,6 +678,10 @@ body {
     .card-cover {
         height: 280px;
     }
+    
+    .epub-layout {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Mobile - 1 column */
@@ -629,5 +743,14 @@ body {
     
     .section-title {
         font-size: 1.2rem;
+    }
+    
+    .epub-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .epub-cover {
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
