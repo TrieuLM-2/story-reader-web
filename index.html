@@ -10,29 +10,48 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="container">
-            <div class="logo">
-                <h1>Góc<span class="highlight">Truyện</span>CủaTui</h1>
+        <div class="header-container">
+            <div class="header-left">
+                <h1 class="site-title">Góc Truyện Của Tui</h1>
+                <nav class="category-nav">
+                    <a href="#" class="category-link active">Trang Chủ</a>
+                    <a href="#" class="category-link">Hoàn Thành</a>
+                    <a href="#" class="category-link">Đang Ra</a>
+                    <a href="#" class="category-link">Drop</a>
+                </nav>
             </div>
-            <nav class="nav-menu">
-                <a href="#" class="nav-link active"><i class="fas fa-home"></i> Trang Chủ</a>
-                <a href="#" class="nav-link"><i class="fas fa-book"></i> Hoàn Thành</a>
-                <a href="#" class="nav-link"><i class="fas fa-tag"></i> Thể Loại</a>
-            </nav>
+            <div class="header-right">
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Tìm kiếm truyện..." id="searchInput">
+            <button class="search-close" id="searchClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="page-wrapper">
+        <div class="content-card">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="#">Home</a>
+            </div>
+
             <!-- Welcome Section -->
             <section class="welcome-section">
-                <div class="welcome-box">
-                    <h1 class="welcome-title">🏳️‍🌈 Chào mừng đến với Góc Truyện Của Tui</h1>
-                    <p class="welcome-text">
-                        Đây là cái ổ nhỏ tui lập ra để lưu trữ mấy bộ đam mỹ, boylove mà tui tâm đắc. Web nhà làm, bao mượt, không quảng cáo, đọc sướng con mắt.
-                    </p>
-                </div>
+                <h1 class="welcome-title">🏳️‍🌈 Chào mừng đến với Góc Truyện Của Tui</h1>
+                <p class="welcome-text">
+                    Đây là cái ổ nhỏ tui lập ra để lưu trữ mấy bộ đam mỹ, boylove mà tui tâm đắc. Web nhà làm, bao mượt, không quảng cáo, đọc sướng con mắt.
+                </p>
             </section>
 
             <!-- Trending Stories Section -->
@@ -44,7 +63,7 @@
                 
                 <div class="bookshelf-grid">
                     <!-- Story Card 1 -->
-                    <a href="#" class="book-card">
+                    <a href="book-detail.html" class="book-card">
                         <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400&h=500&fit=crop" alt="The Wolf at the Door" class="card-cover" onerror="this.src='https://placehold.co/200x300?text=No+Cover'">
                         <div class="card-body">
                             <h3 class="card-title">The Wolf at the Door (Sói Nơi Ngưỡng Cửa)</h3>
@@ -57,7 +76,7 @@
                     </a>
 
                     <!-- Story Card 2 -->
-                    <a href="#" class="book-card">
+                    <a href="book-detail.html" class="book-card">
                         <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=500&fit=crop" alt="The Foxhole Court" class="card-cover" onerror="this.src='https://placehold.co/200x300?text=No+Cover'">
                         <div class="card-body">
                             <h3 class="card-title">The Foxhole Court (Sân Vận Động Hang Cáo)</h3>
@@ -70,8 +89,8 @@
                     </a>
 
                     <!-- Story Card 3 -->
-                    <a href="#" class="book-card">
-                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=500&fit=crop" alt="The Long Game" class="card-cover" onerror="this.src='https://placehold.co/200x3 00?text=No+Cover'">
+                    <a href="book-detail.html" class="book-card">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=500&fit=crop" alt="The Long Game" class="card-cover" onerror="this.src='https://placehold.co/200x300?text=No+Cover'">
                         <div class="card-body">
                             <h3 class="card-title">The Long Game (Ván Đấu Dài Hơi)</h3>
                             <div class="card-author">Tác giả: Rachel Reid</div>
@@ -100,7 +119,7 @@
             <hr class="footer-divider">
             <p class="footer-note">Web này chạy bằng cơm và sự đam mê của TrieuLM.</p>
         </div>
-    </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
