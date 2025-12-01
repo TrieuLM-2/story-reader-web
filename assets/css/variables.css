@@ -1,0 +1,99 @@
+/* CSS Variables for consistency and easy theming */
+:root {
+  /* Colors */
+  --color-primary: #16a085;
+  --color-primary-dark: #138871;
+  --color-primary-light: #e8f5f3;
+  
+  --color-secondary: #667eea;
+  --color-secondary-dark: #764ba2;
+  
+  --color-text: #333;
+  --color-text-light: #666;
+  --color-text-muted: #999;
+  --color-text-subtle: #7f8c8d;
+  
+  --color-bg: #ffffff;
+  --color-bg-page: #e8e8e8;
+  --color-bg-light: #f9f9f9;
+  --color-bg-card: #ffffff;
+  
+  --color-border: #e0e0e0;
+  --color-border-light: #f0f0f0;
+  
+  --color-heading: #2c3e50;
+  --color-link: #16a085;
+  --color-link-hover: #138871;
+  
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 15px;
+  --spacing-md: 20px;
+  --spacing-lg: 30px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 50px;
+  
+  /* Typography */
+  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.85rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.1rem;
+  --font-size-lg: 1.4rem;
+  --font-size-xl: 2rem;
+  --font-size-2xl: 2.5rem;
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  
+  --line-height-tight: 1.4;
+  --line-height-base: 1.6;
+  --line-height-relaxed: 1.8;
+  
+  /* Border Radius */
+  --radius-sm: 5px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 15px;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 8px 20px rgba(0, 0, 0, 0.15);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.6s ease;
+  
+  /* Z-index */
+  --z-base: 1;
+  --z-header: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #e0e0e0;
+    --color-text-light: #b0b0b0;
+    --color-text-muted: #888;
+    
+    --color-bg: #1a1a1a;
+    --color-bg-page: #0f0f0f;
+    --color-bg-light: #2a2a2a;
+    --color-bg-card: #1e1e1e;
+    
+    --color-border: #333;
+    --color-border-light: #2a2a2a;
+    
+    --color-heading: #f0f0f0;
+  }
+}

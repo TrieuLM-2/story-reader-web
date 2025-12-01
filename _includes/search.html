@@ -1,9 +1,40 @@
 <!-- Search Overlay -->
-<div class="search-overlay" id="searchOverlay">
+<div 
+    class="search-overlay" 
+    id="searchOverlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="searchLabel"
+    aria-hidden="true">
     <div class="search-box">
-        <input type="text" class="search-input" placeholder="Tìm kiếm truyện..." id="searchInput">
-        <button class="search-close" id="searchClose">
-            <i class="fas fa-times"></i>
+        <label for="searchInput" id="searchLabel" class="sr-only">Tìm kiếm truyện</label>
+        <input 
+            type="search" 
+            class="search-input" 
+            placeholder="Tìm kiếm truyện..." 
+            id="searchInput"
+            aria-label="Tìm kiếm truyện"
+            autocomplete="off">
+        <button 
+            class="search-close" 
+            id="searchClose"
+            aria-label="Đóng tìm kiếm">
+            <i class="fas fa-times" aria-hidden="true"></i>
         </button>
     </div>
 </div>
+
+<style>
+/* Screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+</style>

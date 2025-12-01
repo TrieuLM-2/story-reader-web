@@ -1,21 +1,54 @@
 <!-- Header -->
-<header class="header">
+<header class="header" role="banner">
     <div class="header-container">
         <div class="header-left">
             <h1 class="site-title">
-                <a href="{{ '/' | relative_url }}" style="color: inherit; text-decoration: none;">{{ site.title }}</a>
+                <a href="{{ '/' | relative_url }}" aria-label="Trang chủ - {{ site.title }}">{{ site.title }}</a>
             </h1>
-            <nav class="category-nav">
-                <a href="{{ '/' | relative_url }}" class="category-link {% if page.url == '/' %}active{% endif %}">Trang Chủ</a>
-                <a href="{{ '/hoan-thanh/' | relative_url }}" class="category-link">Hoàn Thành</a>
-                <a href="{{ '/dang-ra/' | relative_url }}" class="category-link">Đang Ra</a>
-                <a href="{{ '/drop/' | relative_url }}" class="category-link">Drop</a>
+            <nav class="category-nav" role="navigation" aria-label="Danh mục truyện">
+                <a href="{{ '/' | relative_url }}" 
+                   class="category-link {% if page.url == '/' %}active{% endif %}"
+                   {% if page.url == '/' %}aria-current="page"{% endif %}>
+                    Trang Chủ
+                </a>
+                <a href="{{ '/hoan-thanh/' | relative_url }}" 
+                   class="category-link"
+                   {% if page.url contains 'hoan-thanh' %}aria-current="page"{% endif %}>
+                    Hoàn Thành
+                </a>
+                <a href="{{ '/dang-ra/' | relative_url }}" 
+                   class="category-link"
+                   {% if page.url contains 'dang-ra' %}aria-current="page"{% endif %}>
+                    Đang Ra
+                </a>
+                <a href="{{ '/drop/' | relative_url }}" 
+                   class="category-link"
+                   {% if page.url contains 'drop' %}aria-current="page"{% endif %}>
+                    Drop
+                </a>
             </nav>
         </div>
         <div class="header-right">
-            <button class="search-btn" id="searchBtn">
-                <i class="fas fa-search"></i>
+            <button 
+                class="search-btn" 
+                id="searchBtn"
+                aria-label="Mở tìm kiếm"
+                aria-expanded="false"
+                aria-controls="searchOverlay">
+                <i class="fas fa-search" aria-hidden="true"></i>
             </button>
         </div>
     </div>
 </header>
+
+<style>
+.site-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-title a:hover,
+.site-title a:focus {
+    color: var(--color-primary, #16a085);
+}
+</style>
