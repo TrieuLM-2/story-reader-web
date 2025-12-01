@@ -5,10 +5,11 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f5f5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: #ffffff;
     min-height: 100vh;
     color: #333;
+    line-height: 1.6;
 }
 
 .container {
@@ -21,7 +22,7 @@ body {
 .header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 20px 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -71,190 +72,176 @@ body {
 /* Main Content */
 .main-content {
     padding: 40px 0;
-    background: #f5f5f5;
+    background: #ffffff;
 }
 
 /* Welcome Section */
 .welcome-section {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .welcome-box {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     text-align: center;
+    padding: 30px 20px;
 }
 
-.welcome-box h2 {
-    color: #667eea;
-    font-size: 26px;
-    margin-bottom: 15px;
-    font-weight: 600;
+.welcome-title {
+    color: #2c3e50;
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
 }
 
-.welcome-box h2 i {
-    margin-right: 10px;
-}
-
-.welcome-box p {
-    color: #666;
-    font-size: 15px;
+.welcome-text {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
     line-height: 1.6;
+}
+
+/* Section Header */
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    margin: 0;
+    color: #333;
+    font-weight: 700;
+    font-size: 1.5rem;
+    white-space: nowrap;
+}
+
+.section-divider {
+    flex-grow: 1;
+    height: 1px;
+    background: #eee;
+    margin-left: 20px;
 }
 
 /* Stories Section */
 .stories-section {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
-.section-title {
-    color: #333;
-    font-size: 22px;
-    margin-bottom: 30px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-}
-
-.section-title i {
-    margin-right: 10px;
-    color: #667eea;
-}
-
-.stories-grid {
+/* Bookshelf Grid - Main Layout */
+.bookshelf-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
-/* Story Card - Matching the reference design */
-.story-card {
-    background: white;
+/* Book Card */
+.book-card {
+    background: #fff;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #f0f0f0;
 }
 
-.story-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+.book-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-.story-cover {
+.card-cover {
     width: 100%;
     height: 320px;
-    overflow: hidden;
-    background: #f0f0f0;
-}
-
-.story-cover img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
+    background: #f5f5f5;
     transition: transform 0.4s ease;
 }
 
-.story-card:hover .story-cover img {
-    transform: scale(1.08);
+.book-card:hover .card-cover {
+    transform: scale(1.05);
 }
 
-.story-content {
+.card-body {
     padding: 25px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
-.story-title {
-    color: #222;
-    font-size: 18px;
-    font-weight: 600;
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2c3e50;
     margin-bottom: 10px;
     line-height: 1.4;
     min-height: 50px;
 }
 
-.story-author {
-    color: #888;
-    font-size: 14px;
+.card-author {
+    font-size: 0.85rem;
+    color: #7f8c8d;
     margin-bottom: 12px;
-}
-
-.story-desc {
-    color: #555;
-    font-size: 14px;
-    line-height: 1.7;
-    margin-bottom: 15px;
-    flex-grow: 1;
-}
-
-.story-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 18px;
-}
-
-.tag {
-    background: #f0f4ff;
-    color: #667eea;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 12px;
     font-weight: 500;
 }
 
-.read-btn {
-    display: inline-block;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 12px 28px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    text-align: center;
-    align-self: flex-start;
+.card-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    line-height: 1.6;
 }
 
-.read-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.3);
+.card-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    color: #667eea;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid #667eea30;
 }
 
 /* Upcoming Section */
 .upcoming-section {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .upcoming-box {
-    background: white;
+    background: #f9f9f9;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    color: #7f8c8d;
     text-align: center;
+    border: 1px dashed #ddd;
 }
 
 .upcoming-box p {
-    color: #666;
-    font-size: 15px;
+    margin: 0;
+    font-size: 1rem;
 }
 
-/* Footer */
-.footer {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 25px 0;
+/* Footer Elements */
+.footer-divider {
+    margin: 40px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.footer-note {
     text-align: center;
-    color: white;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+    padding-bottom: 30px;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
     .header .container {
         flex-direction: column;
@@ -271,31 +258,60 @@ body {
         text-align: center;
     }
 
-    .stories-grid {
+    .bookshelf-grid {
         grid-template-columns: 1fr;
     }
 
-    .welcome-box h2 {
-        font-size: 22px;
+    .welcome-title {
+        font-size: 1.6rem;
+    }
+
+    .welcome-text {
+        font-size: 1rem;
     }
 
     .section-title {
-        font-size: 20px;
+        font-size: 1.3rem;
     }
 
-    .story-cover {
+    .card-cover {
         height: 280px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+        min-height: auto;
     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    .stories-grid {
+    .bookshelf-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (min-width: 1025px) {
-    .stories-grid {
+    .bookshelf-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/* Smooth Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.book-card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.book-card:nth-child(1) { animation-delay: 0.1s; }
+.book-card:nth-child(2) { animation-delay: 0.2s; }
+.book-card:nth-child(3) { animation-delay: 0.3s; }

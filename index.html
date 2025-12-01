@@ -28,86 +28,79 @@
             <!-- Welcome Section -->
             <section class="welcome-section">
                 <div class="welcome-box">
-                    <h2><i class="fas fa-book-open"></i> Chào mừng đến với Góc Truyện Của Tui</h2>
-                    <p>Đây là nơi tổ chức lại tập các tệp truyện mà bạn từng mua, hoặc mua trực tuyến của các nhà mạng, không phạm vào các website cùng mẫu.</p>
+                    <h1 class="welcome-title">🏳️‍🌈 Chào mừng đến với Góc Truyện Của Tui</h1>
+                    <p class="welcome-text">
+                        Đây là cái ổ nhỏ tui lập ra để lưu trữ mấy bộ đam mỹ, boylove mà tui tâm đắc. Web nhà làm, bao mượt, không quảng cáo, đọc sướng con mắt.
+                    </p>
                 </div>
             </section>
 
             <!-- Trending Stories Section -->
             <section class="stories-section">
-                <h3 class="section-title"><i class="fas fa-book"></i> Danh sách truyện đang lên sóng</h3>
-                <div class="stories-grid">
+                <div class="section-header">
+                    <h2 class="section-title">📚 Danh sách truyện đang lên sóng</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="bookshelf-grid">
                     <!-- Story Card 1 -->
-                    <div class="story-card">
-                        <div class="story-cover">
-                            <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400&h=500&fit=crop" alt="The Wolf at the Door">
-                        </div>
-                        <div class="story-content">
-                            <h4 class="story-title">The Wolf at the Door (Sói Nơi Ngưỡng Cửa)</h4>
-                            <p class="story-author">Tác giả: Charlie Adhara</p>
-                            <p class="story-desc">Cooper Dayton ghét người sói. Oliver Park lại là một con sói quyền rũ chết người. Chuyện gì xảy ra khi cả hai bị buộc vào cuộc truy tìm sát nhân ở vùng hẻo lánh ở tận cùng của tôi đâu?</p>
-                            <div class="story-tags">
-                                <span class="tag">Truyện kiếm</span>
-                                <span class="tag">Hành động</span>
-                                <span class="tag">Mạo hiểm</span>
+                    <a href="#" class="book-card">
+                        <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400&h=500&fit=crop" alt="The Wolf at the Door" class="card-cover" onerror="this.src='https://placehold.co/200x300?text=No+Cover'">
+                        <div class="card-body">
+                            <h3 class="card-title">The Wolf at the Door (Sói Nơi Ngưỡng Cửa)</h3>
+                            <div class="card-author">Tác giả: Charlie Adhara</div>
+                            <div class="card-desc">
+                                Cooper Dayton ghét người sói. Oliver Park lại là một con sói quyến rũ chết người. Chuyện gì xảy ra khi cả hai bị buộc vào chung một vụ án?
                             </div>
-                            <a href="#" class="read-btn">Ngay thôi</a>
+                            <span class="card-tag">Trinh thám, Hành động, Oan gia ngõ hẹp</span>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Story Card 2 -->
-                    <div class="story-card">
-                        <div class="story-cover">
-                            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=500&fit=crop" alt="The Foxhole Court">
-                        </div>
-                        <div class="story-content">
-                            <h4 class="story-title">The Foxhole Court (Sân Vận Động Hàng Giá)</h4>
-                            <p class="story-author">Tác giả: Nora Sakavic</p>
-                            <p class="story-desc">Exy không phải là trò chơi, nó là chiến trường đẫm máu. Neil Josten - kẻ chạy trốn, dùng đó Andrew Minyard - thủ môn điên loạn.</p>
-                            <div class="story-tags">
-                                <span class="tag">Ngôn tình</span>
-                                <span class="tag">Thanh xuân</span>
-                                <span class="tag">Hành động</span>
+                    <a href="#" class="book-card">
+                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=500&fit=crop" alt="The Foxhole Court" class="card-cover" onerror="this.src='https://placehold.co/200x300?text=No+Cover'">
+                        <div class="card-body">
+                            <h3 class="card-title">The Foxhole Court (Sân Vận Động Hang Cáo)</h3>
+                            <div class="card-author">Tác giả: Nora Sakavic</div>
+                            <div class="card-desc">
+                                Exy không phải là trò chơi, nó là chiến trường đẫm máu. Neil Josten - kẻ chạy trốn, đụng độ Andrew Minyard - thủ môn điên loạn.
                             </div>
-                            <a href="#" class="read-btn">Ngay thôi</a>
+                            <span class="card-tag">Sport (Exy), Tâm lý, Dark, Action</span>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Story Card 3 -->
-                    <div class="story-card">
-                        <div class="story-cover">
-                            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=500&fit=crop" alt="The Long Game">
-                        </div>
-                        <div class="story-content">
-                            <h4 class="story-title">The Long Game (Ván Dài Hơi)</h4>
-                            <p class="story-author">Tác giả: Rachel Reid</p>
-                            <p class="story-desc">Shane Hollander và Ilya Rozanov: Hai ngôi sao khúc côn cầu, mười năm đối đầu kịch liệt trên sân băng, nhưng lại yêu nhau điên cuồng trong bóng tối.</p>
-                            <div class="story-tags">
-                                <span class="tag">Ngôn tình</span>
-                                <span class="tag">Hành động và Cuộc</span>
+                    <a href="#" class="book-card">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=500&fit=crop" alt="The Long Game" class="card-cover" onerror="this.src='https://placehold.co/200x3 00?text=No+Cover'">
+                        <div class="card-body">
+                            <h3 class="card-title">The Long Game (Ván Đấu Dài Hơi)</h3>
+                            <div class="card-author">Tác giả: Rachel Reid</div>
+                            <div class="card-desc">
+                                Shane Hollander và Ilya Rozanov: Hai ngôi sao khúc côn cầu, mười năm đối đầu kịch liệt trên sân băng, nhưng lại yêu nhau điên cuồng trong bóng tối.
                             </div>
-                            <a href="#" class="read-btn">Ngay thôi</a>
+                            <span class="card-tag">Sport (Hockey), Rivals to Lovers</span>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </section>
 
             <!-- Upcoming Section -->
             <section class="upcoming-section">
-                <h3 class="section-title"><i class="fas fa-calendar-alt"></i> Dự án sắp tới</h3>
+                <div class="section-header">
+                    <h2 class="section-title">🚧 Dự án sắp tới</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
                 <div class="upcoming-box">
-                    <p>Đang cập nhật thêm (Dùng vui và luôn dự án)</p>
+                    <p>Đang cập nhật thêm... (Chờ tui rảnh đã)</p>
                 </div>
             </section>
+
+            <!-- Footer Text -->
+            <hr class="footer-divider">
+            <p class="footer-note">Web này chạy bằng cơm và sự đam mê của TrieuLM.</p>
         </div>
     </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>Web này được tổ chức cùng với cộng đồng của mì TrixieAI.</p>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>
