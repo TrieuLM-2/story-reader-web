@@ -22,12 +22,13 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - README.md
+  - "*.html"
 
 # Collections
 collections:
   stories:
     output: true
-    permalink: /truyen/:path/
+    permalink: /:name.html
 
 # Defaults
 defaults:
