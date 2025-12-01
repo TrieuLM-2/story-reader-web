@@ -1,0 +1,59 @@
+# Site settings
+title: "Góc Truyện Của Tui"
+description: "Đây là cái ổ nhỏ tui lập ra để lưu trữ mấy bộ đam mỹ, boylove mà tui tâm đắc. Web nhà làm, bao mượt, không quảng cáo, đọc sướng con mắt."
+baseurl: "/story-reader-web"
+url: "https://trieulm-2.github.io"
+author: "TrieuLM"
+
+# Build settings
+theme: null
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+
+# Collections
+collections:
+  stories:
+    output: true
+    permalink: /truyen/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "stories"
+    values:
+      layout: "story"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false
+
+# Permalink style
+permalink: pretty
+
+# Timezone
+timezone: Asia/Ho_Chi_Minh
+
+# Language
+lang: vi

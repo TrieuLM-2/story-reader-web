@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'vi' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    
+    <!-- SEO -->
+    {% seo %}
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <h1 class="site-title">
+                    <a href="{{ '/' | relative_url }}" style="color: inherit; text-decoration: none;">{{ site.title }}</a>
+                </h1>
+                <nav class="category-nav">
+                    <a href="{{ '/' | relative_url }}" class="category-link {% if page.url == '/' %}active{% endif %}">Trang Chủ</a>
+                    <a href="{{ '/hoan-thanh/' | relative_url }}" class="category-link">Hoàn Thành</a>
+                    <a href="{{ '/dang-ra/' | relative_url }}" class="category-link">Đang Ra</a>
+                    <a href="{{ '/drop/' | relative_url }}" class="category-link">Drop</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Tìm kiếm truyện..." id="searchInput">
+            <button class="search-close" id="searchClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="page-wrapper">
+        <div class="content-card">
+            {{ content }}
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ '/script.js' | relative_url }}"></script>
+    
+    {% if jekyll.environment == 'production' %}
+    <!-- Add analytics or other production scripts here -->
+    {% endif %}
+</body>
+</html>

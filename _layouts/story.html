@@ -1,0 +1,128 @@
+---
+layout: default
+---
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+    <a href="{{ '/' | relative_url }}">Home</a>
+    <span class="separator">/</span>
+    {% if page.category %}
+    <a href="{{ '/' | append: page.category | relative_url }}">{{ page.category | capitalize }}</a>
+    <span class="separator">/</span>
+    {% endif %}
+    <span class="current">{{ page.title }}</span>
+</div>
+
+<!-- Book Detail Section -->
+<article class="book-detail">
+    <h1 class="book-detail-title">{{ page.title }}{% if page.author %} by {{ page.author }}{% endif %}</h1>
+    
+    <div class="book-meta">
+        {% if page.author %}
+        <span class="meta-item">by <span class="author-link">{{ page.author }}</span></span>
+        <span class="meta-separator">•</span>
+        {% endif %}
+        {% if page.views %}
+        <span class="meta-item">Views {{ page.views }}</span>
+        <span class="meta-separator">•</span>
+        {% endif %}
+        <span class="meta-item">{{ page.date | date: "%B %d, %Y" }}</span>
+    </div>
+
+    <div class="book-content">
+        <div class="book-cover-section">
+            {% if page.cover %}
+            <img src="{{ page.cover | relative_url }}" alt="{{ page.title }}" class="book-detail-cover">
+            {% else %}
+            <img src="https://placehold.co/300x450?text={{ page.title | url_encode }}" alt="{{ page.title }}" class="book-detail-cover">
+            {% endif %}
+            
+            {% if page.rating %}
+            <div class="book-rating">
+                <div class="stars">
+                    {% assign rating = page.rating | times: 1.0 %}
+                    {% for i in (1..5) %}
+                        {% if i <= rating %}
+                            <i class="fas fa-star"></i>
+                        {% elsif i == rating | plus: 0.5 | floor %}
+                            <i class="fas fa-star-half-alt"></i>
+                        {% else %}
+                            <i class="far fa-star"></i>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% if page.rating_count %}
+                <span class="rating-count">({{ page.rating_count }})</span>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="book-info-section">
+            <div class="book-description">
+                {{ content }}
+            </div>
+
+            <div class="book-details-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="details">Book Details</button>
+                    {% if page.chapters %}
+                    <button class="tab-btn" data-tab="contents">Table of Contents</button>
+                    {% endif %}
+                </div>
+                
+                <div class="tab-content active" id="details">
+                    <div class="detail-grid">
+                        {% if page.author %}
+                        <div class="detail-item">
+                            <span class="detail-label">Tác giả:</span>
+                            <span class="detail-value">{{ page.author }}</span>
+                        </div>
+                        {% endif %}
+                        {% if page.genres %}
+                        <div class="detail-item">
+                            <span class="detail-label">Thể loại:</span>
+                            <span class="detail-value">{{ page.genres | join: ', ' }}</span>
+                        </div>
+                        {% endif %}
+                        {% if page.status %}
+                        <div class="detail-item">
+                            <span class="detail-label">Trạng thái:</span>
+                            <span class="detail-value">{{ page.status }}</span>
+                        </div>
+                        {% endif %}
+                        {% if page.tags %}
+                        <div class="detail-item">
+                            <span class="detail-label">Tags:</span>
+                            <span class="detail-value">{{ page.tags | join: ', ' }}</span>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                {% if page.chapters %}
+                <div class="tab-content" id="contents">
+                    <div class="chapter-list">
+                        {% for chapter in page.chapters %}
+                        <a href="{{ chapter.url | relative_url }}" class="chapter-item">{{ chapter.title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="book-actions">
+                {% if page.read_url %}
+                <a href="{{ page.read_url | relative_url }}" class="btn btn-primary">
+                    <i class="fas fa-book-open"></i>
+                    Đọc ngay
+                </a>
+                {% endif %}
+                <button class="btn btn-secondary">
+                    <i class="fas fa-bookmark"></i>
+                    Lưu truyện
+                </button>
+            </div>
+        </div>
+    </div>
+</article>
