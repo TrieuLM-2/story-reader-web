@@ -141,7 +141,7 @@ body {
 
 /* Page Wrapper - Elevated Card Layout */
 .page-wrapper {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 30px auto;
     padding: 0 20px;
 }
@@ -229,11 +229,11 @@ body {
     margin-bottom: 50px;
 }
 
-/* Bookshelf Grid */
+/* Bookshelf Grid - Responsive columns */
 .bookshelf-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
 }
 
 /* Book Card */
@@ -534,8 +534,44 @@ body {
     padding-bottom: 20px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive Breakpoints */
+
+/* Large Desktop - 4 columns */
+@media (min-width: 1200px) {
+    .bookshelf-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Desktop - 4 columns */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .bookshelf-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .page-wrapper {
+        max-width: 1200px;
+    }
+}
+
+/* Tablet - 3 columns */
+@media (min-width: 768px) and (max-width: 991px) {
+    .bookshelf-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .page-wrapper {
+        max-width: 960px;
+    }
+    
+    .card-cover {
+        height: 280px;
+    }
+}
+
+/* Mobile - 1 column */
+@media (max-width: 767px) {
     .header-left {
         flex-direction: column;
         gap: 15px;
@@ -544,6 +580,7 @@ body {
 
     .category-nav {
         gap: 15px;
+        flex-wrap: wrap;
     }
 
     .content-card {
@@ -552,6 +589,11 @@ body {
 
     .bookshelf-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .card-cover {
+        height: 350px;
     }
 
     .book-content {
@@ -567,6 +609,10 @@ body {
     .welcome-title {
         font-size: 1.5rem;
     }
+    
+    .welcome-text {
+        font-size: 1rem;
+    }
 
     .book-detail-title {
         font-size: 1.5rem;
@@ -579,5 +625,9 @@ body {
     .btn {
         width: 100%;
         justify-content: center;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
     }
 }
