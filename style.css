@@ -615,6 +615,11 @@ body {
     background: #d5dbdd;
 }
 
+/* Upload Button */
+#upload-btn {
+    margin-left: 20px;
+}
+
 /* Upcoming Section */
 .upcoming-section {
     margin-bottom: 40px;

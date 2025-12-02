@@ -1,4 +1,8 @@
-# Hướng dẫn Upload Cover Image
+.book-card-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}# Hướng dẫn Upload Cover Image
 
 ## Bước 1: Chuẩn bị file ảnh
 

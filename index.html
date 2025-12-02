@@ -15,20 +15,38 @@ layout: default
     </p>
 </section>
 
+<!-- Library Section -->
+<section class="library-section">
+    <div class="section-header">
+        <h2 class="section-title">📖 Tủ sách của bạn</h2>
+        <div class="section-divider"></div>
+        <button id="upload-btn" class="btn btn-primary">
+            <i class="fas fa-upload"></i> Tải sách lên (EPUB)
+        </button>
+        <input type="file" id="file-upload" accept=".epub" style="display: none;">
+    </div>
+
+    <div id="library-grid" class="bookshelf-grid">
+        <!-- Books will be loaded here -->
+    </div>
+</section>
+
 <!-- Trending Stories Section -->
 <section class="stories-section">
     <div class="section-header">
         <h2 class="section-title">📚 Danh sách truyện đang lên sóng</h2>
         <div class="section-divider"></div>
     </div>
-    
+
     <div class="bookshelf-grid">
         {% for story in site.stories %}
         <a href="{{ story.url | relative_url }}" class="book-card">
             {% if story.cover %}
-            <img src="{{ story.cover | relative_url }}" alt="{{ story.title }}" class="card-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400&h=500&fit=crop'">
+            <img src="{{ story.cover | relative_url }}" alt="{{ story.title }}" class="card-cover" loading="lazy"
+                onerror="this.src='https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400&h=500&fit=crop'">
             {% else %}
-            <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400&h=500&fit=crop" alt="{{ story.title }}" class="card-cover">
+            <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400&h=500&fit=crop"
+                alt="{{ story.title }}" class="card-cover">
             {% endif %}
             <div class="card-body">
                 <h3 class="card-title">{{ story.title }}</h3>
@@ -51,7 +69,7 @@ layout: default
         <h2 class="section-title">🚧 Dự án sắp tới</h2>
         <div class="section-divider"></div>
     </div>
-    
+
     <div class="upcoming-box">
         <p>Đang cập nhật thêm... (Chờ tui rảnh đã)</p>
     </div>
@@ -60,3 +78,9 @@ layout: default
 <!-- Footer Text -->
 <hr class="footer-divider">
 <p class="footer-note">Web này chạy bằng cơm và sự đam mê của TrieuLM.</p>
+
+<!-- Scripts for Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.10.0/localforage.min.js"></script>
+<script src="{{ '/assets/js/library.js' | relative_url }}"></script>

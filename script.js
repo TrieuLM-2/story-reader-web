@@ -1,4 +1,10 @@
-// Search functionality
+searchBtn.addEventListener('click', () => {
+    searchOverlay.classList.add('active');
+    searchBtn.setAttribute('aria-expanded', 'true');
+    setTimeout(() => searchInput.focus(), 100);
+});
+// Also update in close handlers
+searchBtn.setAttribute('aria-expanded', 'false');// Search functionality
 const searchBtn = document.getElementById('searchBtn');
 const searchOverlay = document.getElementById('searchOverlay');
 const searchClose = document.getElementById('searchClose');
